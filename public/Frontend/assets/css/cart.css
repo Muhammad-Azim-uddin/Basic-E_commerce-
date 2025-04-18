@@ -1,0 +1,509 @@
+/* *Breadcrumbs Start Here */
+#Breadcrumbs {
+  background-image: url(../img/Breadcrumbs.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+}
+
+#Breadcrumbs ul {
+  display: flex;
+  align-items: center;
+}
+
+#Breadcrumbs ul li {
+  display: flex;
+  align-items: center;
+}
+
+#Breadcrumbs ul li .homeIcom {
+  line-height: 10px;
+}
+
+#Breadcrumbs ul li a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray-scale-gray-–-400);
+  margin: 0 6px;
+  transition: 0.3s;
+}
+
+#Breadcrumbs ul li .active,
+#Breadcrumbs ul li a:hover,
+#Breadcrumbs ul li a:focus {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--branding-success);
+  line-height: 10px !important;
+}
+
+/* *Breadcrumbs End Hear */
+
+/* *Cart Body  START HERE */
+#cart {
+  padding-top: 40px;
+}
+
+#cart .heading h2 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 120%;
+  text-align: center;
+  color: var(--gray-scale-gray-–-900);
+  margin-bottom: 32px;
+}
+
+#cart .pdCnt {
+  border: 1px solid var(--gray-scale-gray-–-100);
+  border-radius: 8px;
+}
+
+#cart .productHeading {
+  border-bottom: 1px solid var(--gray-scale-gray-–-100);
+}
+
+#cart .productHeading p {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--gray-scale-gray-–-500);
+  padding: 16px 0;
+}
+
+#cart .productCnt {
+  border: 1px solid var(--gray-scale-gray-–-100);
+}
+
+#cart .productCnt p {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--gray-scale-gray-–-900);
+}
+
+#cart .productCnt .quantity {
+  border: 1px solid var(--gray-scale-gray-–-100);
+  border-radius: 170px;
+  padding: 8px;
+}
+
+#cart .productCnt input {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+  color: var(--gray-scale-gray-–-900);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+#cart .actionBtns button {
+  border-radius: 43px;
+  padding: 14px 32px;
+  height: 45px;
+  border: none;
+  outline: none;
+  margin: 16px 0;
+  line-height: 10px;
+}
+
+/* *Cart Body  ENDS HERE */
+
+/* *Checkout box  START HERE */
+#cart .cartCnt {
+  border: 1px solid var(--gray-scale-gray-–-100);
+  border-radius: 8px;
+  padding: 30px;
+}
+
+#cart .cartCnt h5 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  margin: 10px 0;
+  color: var(--gray-scale-gray-–-900);
+}
+
+#cart .cartCnt .row {
+  border-bottom: 1px solid var(--gray-scale-gray-–-100);
+}
+
+#cart .cartCnt .row:nth-child(4) {
+  border-bottom: none;
+}
+
+#cart .cartCnt p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--gray-scale-gray-–-700);
+  margin: 7px 0;
+}
+
+#cart .cartCnt span {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--gray-scale-gray-–-900);
+  margin: 7px 0;
+}
+
+#cart .cartCnt h5 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--gray-scale-gray-–-900);
+}
+
+#cart .cartCnt a button {
+  border-radius: 43px;
+  padding: 16px 40px;
+  background: var(--branding-success);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--gray-scale-white);
+  height: 51px;
+  width: 100%;
+  margin-top: 32px;
+  outline: none;
+  border: none;
+  line-height: 10px;
+}
+
+/* *Checkout box  ENDS HERE */
+
+/* *Cupon Box  START HERE */
+#cupon .cupon .cuponCnt {
+  border: 1px solid var(--gray-scale-gray-–-100);
+  border-radius: 8px;
+  padding: 20px;
+  width: 67%;
+  height: 92px;
+  background: var(--gray-scale-white);
+}
+
+#cupon .cupon .cuponCnt h4 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--gray-scale-gray-–-900);
+  width: 20%;
+}
+
+#cupon .cupon .cuponCnt .cuponInput {
+  position: relative;
+  width: 100%;
+}
+
+#cupon .cupon .cuponCnt input {
+  border: 1px solid var(--gray-scale-gray-–-100);
+  border-radius: 46px;
+  padding: 14px 24px;
+  width: 80%;
+  height: 52px;
+  background: var(--gray-scale-white);
+  outline: none;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 52px;
+  color: var(--gray-scale-gray-–-400);
+  margin-left: 24px;
+}
+
+#cupon .cupon .cuponCnt button {
+  position: absolute;
+  right: 0;
+  border-radius: 43px;
+  padding: 16px 40px;
+  background: var(--gray-scale-gray-–-800);
+  height: 52px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--gray-scale-white);
+  border: none;
+  outline: none;
+}
+
+/* *Cupon Box  ENDS HERE */
+/* *News Letter Start Here */
+#newsLetter {
+  width: 100%;
+  /* height: 162px; */
+  background: var(--gray-scale-gray-–-50);
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+}
+
+#newsLetter .leftSide h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+  color: var(--gray-scale-gray-–-900);
+}
+
+#newsLetter .leftSide p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--gray-scale-gray-–-400);
+  margin-top: 4px;
+}
+
+#newsLetter .middleSide .inputBox {
+  width: 100%;
+  height: 52px;
+  background: var(--gray-scale-white);
+  border: 1px solid var(--gray-scale-gray-–-100);
+  border-radius: 46px;
+}
+
+#newsLetter .middleSide .inputBox input {
+  width: 70%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  border: 0;
+  padding: 16px 24px;
+  border-radius: 46px 0 0 46px;
+  outline: none;
+}
+
+#newsLetter .middleSide .inputBox input::placeholder {
+  color: var(--gray-scale-gray-–-500);
+}
+
+#newsLetter .middleSide .inputBox button {
+  border-radius: 43px;
+  padding: 16px 40px;
+  width: 30%;
+  height: 100%;
+  outline: none;
+  border: 0;
+  background: var(--branding-success);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--gray-scale-white);
+}
+
+#newsLetter .right-side a {
+  border-radius: 500px;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  line-height: 50px;
+  margin: 0 4px;
+  transition: 0.3s;
+  color: var(--gray-scale-gray-–-900);
+}
+
+#newsLetter .right-side a.active,
+#newsLetter .right-side a:hover,
+#newsLetter .right-side a:focus {
+  background: var(--branding-success);
+  color: var(--gray-scale-gray-–-100);
+}
+
+/* *News Letter End Hear */
+/* *Footer Start Here */
+footer {
+  width: 100%;
+  background: var(--gray-scale-gray-–-900);
+}
+
+footer #FooterTop {
+  padding: 60px 0;
+}
+
+footer .leftSide {
+  width: 336px;
+}
+
+footer .leftSide .logo span {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 119%;
+  letter-spacing: -0.03em;
+  margin-left: 5px;
+  color: var(--gray-scale-white);
+}
+
+footer .leftSide p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--gray-scale-gray-–-500);
+  margin: 16px 0;
+}
+
+footer .leftSide span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray-scale-gray-–-500);
+  margin: 0 2px;
+}
+
+footer .leftSide span a {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  padding-bottom: 3px;
+  color: var(--gray-scale-white);
+  border-bottom: 2px solid var(--branding-success-dark);
+}
+
+footer .rightSide ul h4 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray-scale-white);
+  margin-bottom: 14px;
+}
+
+footer .rightSide ul li {
+  margin: 6px 0;
+}
+
+footer .rightSide ul li a {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--gray-scale-gray-–-400);
+  transition: 0.2s;
+}
+
+footer .rightSide ul li a:hover,
+footer .rightSide ul li a:focus {
+  color: var(--gray-scale-white);
+}
+
+/* *Footer bottom Start Here */
+#copyRight {
+  padding: 24px 0px;
+}
+
+#copyRight p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--gray-scale-gray-–-500);
+}
+
+#copyRight a {
+  margin: 0 4px;
+}
+
+/* *Footer bottom End Hear */
+/* *Footer End Hear */
+#middleBar .offcanvas nav {
+  background: transparent;
+}
+
+/* *Responsive Start Here */
+@media (max-width: 991.9px) {
+  #cart .productHeading p {
+    padding: 5px 0;
+    font-size: 14px;
+  }
+
+  #cart .productCnt .quantity {
+    padding: 0px;
+  }
+
+  #cart .productCnt img {
+    width: 50%;
+  }
+
+  #cart .productCnt p {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+
+  #cart .actionBtns button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* cupon box */
+  #cupon .cupon .cuponCnt {
+    width: 100%;
+    height: 92px;
+  }
+
+  #cart .cartCnt .row:nth-child(5) {
+    border-bottom: none;
+  }
+
+  #cart .cpLinks {
+    position: relative;
+    margin-top: 5px;
+  }
+
+  #cart .cpLinks input {
+    border: 1px solid var(--gray-scale-gray-–-100);
+    border-radius: 46px;
+    padding: 14px 24px;
+    outline: none;
+    height: 52px;
+  }
+
+  #cart .cpLinks button {
+    position: absolute;
+    right: -5px;
+    border-radius: 43px;
+    padding: 16px 40px;
+    background: var(--gray-scale-gray-–-800);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    line-height: 10px;
+    color: var(--gray-scale-white);
+    height: 52px;
+  }
+
+  #newsLetter .middleSide .inputBox button {
+    width: 40%;
+  }
+
+  #newsLetter .middleSide .inputBox {
+    margin-top: 20px;
+  }
+
+  #newsLetter .right-side {
+    margin-top: 20px;
+  }
+
+  /* *Footer Start Here */
+  footer .rightSide ul h4 {
+    margin-top: 20px;
+  }
+
+  footer #FooterTop {
+    padding: 60px 0 0;
+  }
+
+  #copyRight p {
+    margin-bottom: 20px;
+  }
+
+  /* *Footer End Hear */
+}
+
+/* *Responsive End Hear */
