@@ -16,10 +16,9 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashb
 // category routes
 Route::middleware('auth')->prefix('/backend/category')->controller(CategoryController::class)->name('category.')->group(function () {
     Route::get('/{id?}', 'index')->name('index');
-    Route::post('/store', 'store')->name('store');
-    // Route::get('/edit/{id?}', 'edit')->name('edit');
+    Route::post('/store-or-update{id?}', 'storeOrUpdate')->name('store');
+    Route::get('/delete/{id}', 'delete')->name('delete');
 });
-
 
 
     

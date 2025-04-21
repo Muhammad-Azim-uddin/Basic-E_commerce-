@@ -35,7 +35,7 @@
                <div
                   class="col-lg-6 col d-flex align-items-center justify-content-lg-start justify-content-center location">
                   <iconify-icon icon="fluent:location-20-regular"></iconify-icon>
-                  <p>Store Location: Lincoln- 344, Illinois, Chicago, USA</p>
+                  <p>Store Location: Lincoln- 344, Illinois, Chicago, USA  </p>
                </div>
                <div class="col-lg-6 d-lg-flex d-none align-items-center justify-content-end quickActions">
                   <form action="">
@@ -60,6 +60,7 @@
       <!-- *Middle Bar Section Desktop start -->
       <section id="middleBar" class="d-none d-lg-block">
          <div class="container">
+           
             <div class="row align-items-center">
                <div class="col-lg-3">
                   <div class="logo">
@@ -182,13 +183,11 @@
                      </div>
                      <nav>
                         <ul class="shopOpen">
-                           <li><a href="#">Food</a></li>
-                           <li><a href="#">Baby Food & Care</a></li>
-                           <li><a href="#">Home Cleaning</a></li>
-                           <li><a href="#">Beauty & Health</a></li>
-                           <li><a href="#">Fashion & Lifestyle</a></li>
-                           <li><a href="#">Home & Kitchen</a></li>
-                           <li><a href="#">Stationeries</a></li>
+                           @foreach ($categories as $category) 
+                           <li><a href="#"> {{$category}} </a></li>                            
+                           @endforeach
+
+                           
                         </ul>
                      </nav>
                   </li>
@@ -292,13 +291,10 @@
                               Categories</span><iconify-icon icon="iconamoon:arrow-down-2-thin"></iconify-icon>
                         </button>
                         <ul class="dropdown-menu">
-                           <li><a class="dropdown-item" href="#">Food</a></li>
-                           <li><a class="dropdown-item" href="#">Baby Food & Care</a></li>
-                           <li><a class="dropdown-item" href="#">Home Cleaning</a></li>
-                           <li><a class="dropdown-item" href="#">Beauty & Health</a></li>
-                           <li><a class="dropdown-item" href="#">Fashion & Lifestyle</a></li>
-                           <li><a class="dropdown-item" href="#">Home & Kitchen</a></li>
-                           <li><a class="dropdown-item" href="#">Stationeries</a></li>
+                           @foreach ($categories as $category )
+                           <li><a class="dropdown-item" href="#">{{$category->title}} </a></li>
+                              
+                           @endforeach
                         </ul>
                      </div>
                   </div>
@@ -309,13 +305,9 @@
                            <a class="d-flex align-items-center" href="shop.html">Shop <iconify-icon
                                  icon="iconamoon:arrow-down-2-bold"></iconify-icon></a>
                            <ul class="desktopChild">
-                              <li><a href="#">Food</a></li>
-                              <li><a href="#">Baby Food & Care</a></li>
-                              <li><a href="#">Home Cleaning</a></li>
-                              <li><a href="#">Beauty & Health</a></li>
-                              <li><a href="#">Fashion & Lifestyle</a></li>
-                              <li><a href="#">Home & Kitchen</a></li>
-                              <li><a href="#">Stationeries</a></li>
+                              @foreach ($categories as $category )
+                              <li><a class="dropdown-item" href="#">{{$category->title}} </a></li>                                
+                              @endforeach
                            </ul>
                         </li>
                         <li class="desktopParent"><a class="d-flex align-items-center" href="#">Pages

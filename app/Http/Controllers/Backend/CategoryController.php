@@ -12,43 +12,39 @@ class CategoryController extends Controller
     {
         $categories = Category::latest()->get();
         $editedCategory = null;
-        if($id){
-            $editedCategory = $categories->where('id',$id)->first();
-            // $category = Category::findorfail($id);
-            // return view('Backend.category.edit', compact('category'));
+        if ($id) {
+            $editedCategory = $categories->where('id', $id)->first();
         }
-        // dd($categories);
-        return view('Backend.category.index', compact('categories' , 'editedCategory'));
-    }   
-    
-    function store(Request $request){
+        return view('Backend.category.index', compact('categories', 'editedCategory'));
+    }
+
+    function storeOrUpdate(Request $request, $id = null)
+    {
         $request->validate([
             'title' => 'required | min:3',
-            // 'slug' => 'required',
-            // 'status' => 'required',
         ]);
 
-        $isExist = Category::where('slug' ,str()->slug($request->title))->exists(); 
-        // dd($isExist);
-        if($isExist){
+        $isExist = Category::where('id', '!=', $id)->where('slug', str()->slug($request->title))->exists();
+        if ($isExist) {
             return back()->withErrors(['title' => 'Category Already Exist']);
             exit();
         }
-        $category = new Category();
+
+        $category = Category::findOrNew($id);
         $category->title = $request->title;
-        $category->slug =str()->slug($request->title);
-        // $category->status = $request->status;
+        $category->slug = str()->slug($request->title);
+        if($id){
+            $category->status = $request->status?? false;
+        }
         $category->save();
-        return redirect()->back()->with('success', 'Category Created Successfully');
-    }  
-    
-    
-    public function edit($id)
+        return redirect()->route('category.index')->with('success', $id ? 'Category updated successfully' : 'Category added successfully');
+        // return redirect()->back();
+    }
+
+    function delete($id)
     {
-        $category = Category::findorfail($id);
-        return view('Backend.category.edit', compact('category'));
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect()->back();
     }
 }
-
-
-
