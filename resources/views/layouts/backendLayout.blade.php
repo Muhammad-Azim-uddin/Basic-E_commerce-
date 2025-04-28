@@ -26,6 +26,7 @@
       rel="stylesheet" />
 
     <link rel="stylesheet" href="{{asset('Backend/assets/vendor/fonts/iconify-icons.css')}}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Core CSS -->
     <!-- build:css assets/vendor/css/theme.css  -->
@@ -116,7 +117,7 @@
                 </li>
 
                 <!-- User -->
-                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">  
                   <a
                     class="nav-link dropdown-toggle hide-arrow p-0"
                     href="javascript:void(0);"
@@ -146,7 +147,7 @@
                       <div class="dropdown-divider my-1"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a class="dropdown-item" href="{{route('dashboard.profile')}}">
                         <i class="icon-base bx bx-user icon-md me-3"></i><span>My Profile</span>
                       </a>
                     </li>
@@ -194,49 +195,9 @@
 
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl">
-                <div
-                  class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
-                  <div class="mb-2 mb-md-0">
-                    &#169;
-                    <script>
-                      document.write(new Date().getFullYear());
-                    </script>
-                    , made with ❤️ by
-                    <a href="https://themeselection.com" target="_blank" class="footer-link">ThemeSelection</a>
-                  </div>
-                  <div class="d-none d-lg-inline-block">
-                    <a
-                      href="https://themeselection.com/item/category/admin-templates/"
-                      target="_blank"
-                      class="footer-link me-4"
-                      >Admin Templates</a
-                    >
-
-                    <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                    <a
-                      href="https://themeselection.com/item/category/bootstrap-admin-templates/"
-                      target="_blank"
-                      class="footer-link me-4"
-                      >Bootstrap Dashboard</a
-                    >
-
-                    <a
-                      href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/"
-                      target="_blank"
-                      class="footer-link me-4"
-                      >Documentation</a
-                    >
-
-                    <a
-                      href="https://github.com/themeselection/sneat-bootstrap-html-admin-template-free/issues"
-                      target="_blank"
-                      class="footer-link"
-                      >Support</a
-                    >
-                  </div>
-                </div>
-              </div>
+              <div class="container-xxl d-flex justify-content-center flex-wrap text-center py-3">
+                <p class="mb-0">Copyright &copy; {{date('Y')}}. All rights reserved.</p>
+                <p class="mb-0">Developed by <a href="https://www.facebook.com/profile.php?id=100022925533987" target="_blank">Muhammad Azim </a></p>
             </footer>
             <!-- / Footer -->
 
@@ -257,6 +218,8 @@
     <script src="{{asset('Backend/assets/vendor/libs/jquery/jquery.js')}}"></script>
 
     <script src="{{asset('Backend/assets/vendor/libs/popper/popper.js')}}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> --}}
+
     <script src="{{asset('Backend/assets/vendor/js/bootstrap.js')}}"></script>
 
     <script src="{{asset('Backend/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
@@ -279,5 +242,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @stack('scripts')
+
+    @stack("profile-preview")
   </body>
 </html>

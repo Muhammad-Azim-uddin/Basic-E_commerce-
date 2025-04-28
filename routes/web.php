@@ -20,5 +20,11 @@ Route::middleware('auth')->prefix('/backend/category')->controller(CategoryContr
     Route::get('/delete/{id}', 'delete')->name('delete');
 });
 
+// profile routes//
+
+Route::get('/profile' , [DashboardController::class, 'profile'])->name('dashboard.profile')->middleware('auth');
+// Route::get('/profile/editProfile' , [DashboardController::class, 'editProfile'])->name('dashboard.profile.edit')->middleware('auth');
+Route::put('/profile/update' , [DashboardController::class, 'updateProfile'])->name('dashboard.profile.update')->middleware('auth');
+
 
     
