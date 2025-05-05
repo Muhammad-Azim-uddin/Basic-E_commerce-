@@ -44,22 +44,23 @@ class DashboardController extends Controller
                 'email' => $request->email,
             ];
         
+
             if ($request->hasFile('profile_image')) {
                 // Delete old image if exists
                 if ($user->profile_image && Storage::exists('public/profile_images/' . $user->profile_image)) {
                     Storage::delete('public/profile_images/' . $user->profile_image);
                 }
-            
+                
+                $request->profile_image->storeAs('public/profile_images', 'hello.jpg' , 'public');
                 $file = $request->file('profile_image');
                 $filename = time() . '_' . $file->getClientOriginalName();
                 $file->storeAs('public/profile_images', $filename);
             
                 $data['profile_image'] = $filename;
             }
-            
+  
             $user->update($data);
-        
-            return redirect()->back()->with('success', 'Profile updated successfully!');
+             return redirect()->back()->with('success', 'Profile updated successfully!');
         } 
     }
 }

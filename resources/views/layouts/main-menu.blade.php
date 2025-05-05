@@ -1,15 +1,23 @@
     <!-- Dashboards -->
-    <li class="menu-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+    <li class="menu-item {{ request()->routeIs('dashboard') ? 'active open' : '' }}">
         <a href="{{ route('dashboard') }}" class="menu-link ">
             <i class="menu-icon tf-icons bx bx-home-smile"></i>
             <div class="text-truncate menuName" data-i18n="Dashboards">Dashboards</div>
         </a>
     </li>
     <!-- categories -->
-    <li class="menu-item {{ request()->routeIs('category.index') ? 'active' : '' }}">
+    <li class="menu-item {{ request()->routeIs('category.index') ? 'active open' : '' }}">
         <a href="{{ route('category.index') }}" class="menu-link ">
             <i  class='menu-icon bx bx-category'></i>
             <div class="text-truncate" data-i18n="Dashboards"> Manage Categories</div>
+        </a>
+    </li>
+
+    <!-- brands -->
+    <li class="menu-item {{ request()->routeIs('brand.index') ? 'active open' : '' }}">
+        <a href="{{ route('brand.index') }}" class="menu-link ">
+            <i class='bx bxl-shopify menu-icon'></i>
+            <div class="text-truncate" data-i18n="Dashboards"> Manage Brands</div>
         </a>
     </li>
 

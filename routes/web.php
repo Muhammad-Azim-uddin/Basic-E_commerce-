@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Models\brand;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 // Route::get('/logout' , [])
@@ -19,6 +21,15 @@ Route::middleware('auth')->prefix('/backend/category')->controller(CategoryContr
     Route::post('/store-or-update{id?}', 'storeOrUpdate')->name('store');
     Route::get('/delete/{id}', 'delete')->name('delete');
 });
+
+
+// brands routes
+Route::middleware('auth')->prefix('/backend/brand')->controller(BrandController::class)->name('brand.')->group(function () {
+    Route::get('/{id?}', 'index')->name('index');
+    Route::post('/store-or-update{id?}', 'storeOrUpdate')->name('store');
+    Route::get('/delete/{id}', 'delete')->name('delete');
+});
+
 
 // profile routes//
 
