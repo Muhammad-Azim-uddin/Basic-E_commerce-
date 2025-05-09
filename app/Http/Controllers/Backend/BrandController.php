@@ -3,15 +3,16 @@
 namespace App\Http\Controllers\Backend;
 
 use view;
-use App\Models\Brand;
+use App\Models\brand;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Container\Attributes\Storage;
 
 class BrandController extends Controller
 {
     function index($id = null)
     {
-        $editedBrand = null;
+        $editedBrand = brand::find($id)?? null;
         $brands = brand::get();
         return view('Backend.brand.index', compact('editedBrand', 'brands'));
     }
@@ -27,10 +28,26 @@ class BrandController extends Controller
             $icon = $request->icon->storeAs('brands', $iconName, 'public');
         }
 
-        $brand = new brand();
+        $brand = brand::find($id)?? new brand();
         $brand->title = $request->title;
-        $brand->icon = $icon ?? null;
+        if ($request->hasFile('icon') && isset($brand->icon)){
+            Storage::disk('public')->delete($brand->icon);
+        }
+        $brand->status = $request->has('status'); // Automatically true/false
+        $brand->icon = $icon ?? $brand->icon;
         $brand->save();
-        return redirect()->back()->with('success', 'Brand Created Successfully');
+        notify()->success($id ? 'Brand Updated Successfully' : 'Brand Added Successfully');
+
+        return redirect()->back()->with('success', [
+            'message' => $id ? 'Brand Updated Successfully' : 'Brand Added Successfully',
+        ]);
     }
+
+    function delete($id){
+        $brand = brand::find($id);
+        $brand->delete();
+        notify()->success('Brand Deleted Successfully');
+        return back();
+    }
+
 }

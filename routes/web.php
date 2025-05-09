@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\ProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
@@ -39,3 +40,13 @@ Route::put('/profile/update' , [DashboardController::class, 'updateProfile'])->n
 
 
     
+
+// product routes
+
+Route::middleware('auth')->prefix('/backend/product')->controller(ProductController::class)->name('product.')->group(function(){
+    Route::get('/', 'index')->name('index');
+    Route::get('create', 'create')->name('create');
+    Route::post('store{id?}', 'store')->name('store');
+    Route::get('edit{id?}', 'edit')->name('edit');
+    Route::post('update', 'update')->name('update');
+});

@@ -5,7 +5,7 @@
     <div class="container">
         @if (session('success'))
             <div class="alert alert-primary" role="alert">
-                {{ session('success') }}
+                {{ session('success')['message'] }}
             </div>
         @endif
         <div class="row">
@@ -24,6 +24,11 @@
                                 @enderror
                             </div>
                             <div class="form-group my-2">
+                                @if (isset($editedBrand->icon))
+                                    <img class="w-50" src="{{asset('storage/'. $editedBrand->icon)}}" alt="">
+
+                                    
+                                @endif
                                 <label for="title">Brand Icon</label>
                                 <input type="file" name="icon"
                                     class="form-control" id="title">
@@ -39,7 +44,7 @@
                                             {{ $editedBrand?->status ? 'checked' : '' }} />
                                         <label class="form-check-label" for="flexSwitchCheckChecked">Status</label>
                                     </div>
-                                </div>
+                                </div>  
                             @endif
 
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -72,7 +77,7 @@
                                             <div class="btn-group">
                                                 <a href="{{ route('brand.index', $brand->id) }}"
                                                     class="btn btn-sm btn-primary"><i class='bx bx-pencil'></i></i></a>
-                                                <a href="{{route('brand.delete', $brand->id )}}" class="btn btn-sm btn-danger btnDelete"><i
+                                            <a href="{{route('brand.delete', $brand->id )}}" class="btn btn-sm btn-danger btnDelete"><i
                                                         class='bx bx-trash-alt'></i></i></a>
 
                                             </div>
